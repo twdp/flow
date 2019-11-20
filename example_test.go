@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/Knetic/govaluate"
-	_ "github.com/lib/pq"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 //测试表达式

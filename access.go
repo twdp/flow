@@ -26,8 +26,7 @@ func InitAccessByConfig(cfg string) {
 	InitConfig(cfg)
 	if orm == nil {
 		flowlog.Info(DbDriverConnstr)
-		connString := fmt.Sprintf(DbDriverConnstr, DbUsername, DbPassword,
-			DbServer, DbPort, DbDatebase)
+		connString := DbDriverConnstr
 
 		flowlog.Info(connString)
 		var err error
@@ -79,5 +78,5 @@ func DeleteObj(inf interface{}) {
 	_, err := orm.Delete(inf)
 	t := reflect.TypeOf(inf)
 	PanicIf(err, "fail to delete %v", t)
-	flowlog.Info("%v deleted", t)
+	flowlog.Info("  deleted", t)
 }
