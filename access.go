@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/go-xorm/core"
+	"xorm.io/core"
 	"github.com/go-xorm/xorm"
 )
 
@@ -40,7 +40,7 @@ func InitAccessByConfig(cfg string) {
 		orm.SetMaxOpenConns(MaxOpenConns)
 
 		orm.TZLocation = time.Local
-		orm.ShowSQL = true
+		//orm.ShowSQL = true
 
 		tbMapper := core.NewPrefixMapper(core.SameMapper{}, "GF_")
 		orm.SetTableMapper(tbMapper)
